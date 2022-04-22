@@ -27,5 +27,7 @@ function result = InterpolacionNewton(xPoints, yPoints, x)
     key = strcat("b",num2str(i - 1));
     fprintf("     %s          %s\n", key, num2str(coefficients(i)));
   endfor
+  errorRelativo = (realValue - estimateValue)/realValue * 100;
   fprintf("valor estimado de f(%d) = %.6f\n", x, estimateValue);
+  fprintf("Error relativo porcentual con respecto al valor real: %.2f%%\n",errorRelativo);
 endfunction
